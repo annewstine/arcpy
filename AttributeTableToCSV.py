@@ -8,7 +8,6 @@ arcpy.env.workspace = r'C:/Users/AStine/Documents/ArcGIS/test.gdb'
 arcpy.env.overwriteOutput = True
 
 #Define the function
-
 def attributeToCsv(inTable, outPath):
     #define variables
     rows = arcpy.SearchCursor(inTable)
