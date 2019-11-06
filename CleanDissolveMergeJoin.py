@@ -21,7 +21,6 @@ working_util = 'working_util.gdb/working_util'
 list = [StormPipe, SewerLat, SewerMain, WaterLat, WaterMain]
 
 
-#SKIP UNLESS REBUILDING STORMPIPE
 #Add field to StormPipe 
 fieldname1 = "ProjectID"
 arcpy.AddField_management(StormPipe, fieldname1, "TEXT", field_is_nullable="NULLABLE")
