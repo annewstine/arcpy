@@ -27,3 +27,4 @@ outTable.writerow(fieldnames)
 for row in allRows:
     outTable.writerow(row)
 print('CSV created.')
+outTable.close()
