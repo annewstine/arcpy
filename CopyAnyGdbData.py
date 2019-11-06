@@ -21,11 +21,10 @@ def listpaths(list_fcs, location):
     return filepaths
 
 #Run function on inputs and outputs
-input_list = listnames(fc_list, in_gdb)
-output_list = listnames(fc_list, out_gdb)
+input_list = listpaths(fc_list, in_gdb)
+output_list = listpaths(fc_list, out_gdb)
 
 #Copy data by iterating through inputs and outputs
 for item, copy in zip(input_list, output_list):
     arcpy.Copy_management(item, copy)
     print(item + ' copied...')
-
