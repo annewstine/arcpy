@@ -40,5 +40,5 @@ df['DATEmod']=(pd.to_datetime(df.modified,unit='ms'))
 
 
 #Export dataframe to csv
-df.to_csv (r'C:\Users\Astine\desktop\test.csv', index = None, header=True) 
+df.to_csv (r'C:\Users\Astine\desktop\AGO_info.csv', index = None, header=True) 
 
