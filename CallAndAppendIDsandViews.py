@@ -1,38 +1,24 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[ ]:
-
-
 #import library
 from arcgis import GIS
 import csv
 import pandas as pd
 
 
-# In[ ]:
-
-
 #connect to the organization
 #replace "USERNAME" with an AGO user
 #you can add ,"PASSWORD" if you dont want to type your password when the script is run (not recommended)
-gis = GIS("https://cedarpark.maps.arcgis.com","Anne.Stine_CedarPark")
-
-
-# In[ ]:
+gis = GIS("https://YOUR_AGO_ADDRESS.com","YOUR_USERNAME")
+#You will be prompted for a password after the above code runs.
 
 
 all_items = gis.content.search('*',max_items=400)
 all_keys = list(all_items[0].keys())
 
 
-# In[ ]:
-
-
 len(all_items)
-
-
-# In[ ]:
 
 
 #Below this line i iterate through all_items
@@ -65,37 +51,22 @@ for item in all_items:
         pass
 
 
-# In[ ]:
-
-
 #Outputs from file handling above:  
 print(str(len(no_views)) + ' files had no views in last 30 days.')
 print(str(len(error_IDs)) + ' files triggered errors')
 print(str(len(df_out))+ " files were viewed in last 30 days.")
 
 
-# In[ ]:
-
-
 print('Files with no views: ')
 print(no_views)
-
-
-# In[ ]:
 
 
 print('Error files: ')
 print(error_IDs)
 
 
-# In[ ]:
-
-
 #Export df_out to csv
 df_out.to_csv (r'C:\Users\Astine\Desktop\usage.csv', index = None, header=True) 
-
-
-# In[ ]:
 
 
 #Export IDs of error files to txt
@@ -103,9 +74,6 @@ outfile = open(r'C:\Users\Astine\Desktop\error_files.txt', 'w') # open a file in
 for item in error_IDs:    # iterate over the list items
     outfile.write(str(item) + '\n') # write to the file
 outfile.close() 
-
-
-# In[ ]:
 
 
 #Export list of files with no views to text
