@@ -24,7 +24,7 @@ gis = GIS("AGOWEBSITEADDRESS.com","USERNAME")
 
 
 #define variables for writing item info to file
-header = "id;owner;created;modified;title;type;url;numViews;"
+header = "id|owner|created|modified|title|type|url|numViews|"
 key_list = ['id','owner','created','modified','title','type','url','numViews']
 
 
@@ -54,7 +54,7 @@ all_keys = list(all_items[0].keys())
 for x in range(len(all_items)):
         for y in key_list:
             file1.write(str(dict(all_items[x]).get(y)))
-            file1.write(';')
+            file1.write('|')
         file1.write("\n")
 
 
@@ -75,7 +75,7 @@ file1 = open("file1.txt", "r")
 
 
 #data = pd.read_csv('file1.csv', sep=";", )
-df = pd.read_csv('C:/Users/Astine/file1.txt', sep=";", encoding = "ISO-8859-1", header=None)
+df = pd.read_csv('C:/Users/Astine/file1.txt', sep="|", encoding = "ISO-8859-1", header=None)
 df.columns = df.iloc[0]
 df = df[1:]
 df
