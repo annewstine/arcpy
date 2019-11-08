@@ -9,7 +9,6 @@ from arcgis import GIS
 import csv
 import pandas as pd
 from datetime import datetime
-import re
 
 
 # In[140]:
@@ -18,7 +17,7 @@ import re
 #connect to the organization
 #replace "USERNAME" with an AGO user
 #you can add ,"PASSWORD" if you dont want to type your password when the script is run (not recommended)
-gis = GIS("https://cedarpark.maps.arcgis.com","Anne.Stine_CedarPark")
+gis = GIS("AGOWEBSITEADDRESS.com","USERNAME")
 
 
 # In[425]:
